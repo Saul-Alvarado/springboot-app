@@ -1,4 +1,4 @@
-package com.saul.springboot.app.springboot_app;
+package com.saul.springboot.app.springboot_app.validatios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

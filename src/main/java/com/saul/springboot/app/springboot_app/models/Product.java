@@ -1,7 +1,7 @@
 package com.saul.springboot.app.springboot_app.models;
 
-import com.saul.springboot.app.springboot_app.IsSkuExistsDB;
 import com.saul.springboot.app.springboot_app.validatios.IsRequired;
+import com.saul.springboot.app.springboot_app.validatios.IsSkuExistsDB;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
