@@ -1,12 +1,14 @@
 package com.saul.springboot.app.springboot_app.models;
 
+import com.saul.springboot.app.springboot_app.validatios.IsRequired;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -21,10 +23,10 @@ public class Product {
     @Min(value = 10, message = "{Min.product.price}")
     private Integer price;
 
-    @NotBlank(message = "{NotBlank.product.name}")
+    @IsRequired
     private String name;
 
-    @NotBlank(message = "{NotBlank.product.description}")
+    @IsRequired
     private String description;
 
     
