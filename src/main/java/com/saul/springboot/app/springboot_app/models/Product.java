@@ -1,5 +1,6 @@
 package com.saul.springboot.app.springboot_app.models;
 
+import com.saul.springboot.app.springboot_app.IsSkuExistsDB;
 import com.saul.springboot.app.springboot_app.validatios.IsRequired;
 
 import jakarta.persistence.Entity;
@@ -18,6 +19,10 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @IsRequired
+    @IsSkuExistsDB
+    private String sku;
 
     @NotNull(message = "{NotNull.product.price}")
     @Min(value = 10, message = "{Min.product.price}")
@@ -65,9 +70,12 @@ public class Product {
         this.description = description;
     }
 
+    public String getSku() {
+        return sku;
+    }
 
-    
-
-    
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
 
 }
