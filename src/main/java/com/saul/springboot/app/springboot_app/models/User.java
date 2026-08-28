@@ -1,5 +1,6 @@
 package com.saul.springboot.app.springboot_app.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -57,6 +58,14 @@ public class User {
     public void prePersist (){
         enabled = true; 
     }
+
+    
+
+    public User() {
+        this.roles = new ArrayList<>();
+    }
+
+
 
     public Long getId() {
         return id;
