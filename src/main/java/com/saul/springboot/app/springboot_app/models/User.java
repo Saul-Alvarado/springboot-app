@@ -61,7 +61,6 @@ public class User {
         enabled = true; 
     }
 
-    
     public User() {
         this.roles = new ArrayList<>();
     }
