@@ -20,7 +20,7 @@ import jakarta.validation.Valid;
 
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("api/users")
 public class UserController {
 
     private final UserService userService;
@@ -42,6 +42,12 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
     }
 
+    @PostMapping("/register")
+    public ResponseEntity <?> register (@Valid @RequestBody User user, BindingResult result){
+        user.setAdmin(false);
+        return save(user, result);
+    }
+
     private ResponseEntity<?> valid(BindingResult result) {
         Map<String, String> errors = new HashMap<>();
         result.getFieldErrors().forEach(err ->{
@@ -49,7 +55,5 @@ public class UserController {
         });
         return ResponseEntity.badRequest().body(errors);
     }
-
-
 
 }

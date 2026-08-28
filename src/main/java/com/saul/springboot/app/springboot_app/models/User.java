@@ -57,7 +57,6 @@ public class User {
         enabled = true; 
     }
 
-
     public Long getId() {
         return id;
     }
