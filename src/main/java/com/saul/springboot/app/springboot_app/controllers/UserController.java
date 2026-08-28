@@ -51,7 +51,7 @@ public class UserController {
     private ResponseEntity<?> valid(BindingResult result) {
         Map<String, String> errors = new HashMap<>();
         result.getFieldErrors().forEach(err ->{
-            errors.put(err.getField(), "El campo " + err.getField() +" es requerido " + err.getDefaultMessage());
+            errors.put(err.getField(), "El campo " + err.getField() +" " + err.getDefaultMessage());
         });
         return ResponseEntity.badRequest().body(errors);
     }
