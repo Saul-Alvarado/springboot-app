@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,8 +23,7 @@ public class UserServiceImpl implements UserService{
     private final PasswordEncoder passwordEncoder;
 
     
-    public UserServiceImpl(UserRepository userRepository, RoleRespository roleRespository,
-            PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleRespository roleRespository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleRespository = roleRespository;
         this.passwordEncoder = passwordEncoder;
