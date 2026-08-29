@@ -23,7 +23,7 @@ public class JpaUserDetailsService implements UserDetailsService {
     JpaUserDetailsService(UserRepository repository) {
         this.repository = repository;
     }
-
+ 
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
